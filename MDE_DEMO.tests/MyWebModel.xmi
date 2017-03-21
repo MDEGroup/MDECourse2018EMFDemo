@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="ASCII"?>
+<website:WebModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:website="http://org.disim.website">
+  <modelElement xsi:type="website:Page">
+    <composedOf data="//@modelElement.2"/>
+  </modelElement>
+  <modelElement xsi:type="website:Page">
+    <composedOf data="//@modelElement.3"/>
+  </modelElement>
+  <modelElement xsi:type="website:Entity" shownBy="//@modelElement.0/@composedOf"/>
+  <modelElement xsi:type="website:Entity" shownBy="//@modelElement.1/@composedOf"/>
+</website:WebModel>

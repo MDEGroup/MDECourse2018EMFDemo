@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="webasite" nsURI="http://org.disim.website" nsPrefix="website">
+  <eClassifiers xsi:type="ecore:EClass" name="NamedElement" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="WebModel" eSuperTypes="#//NamedElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="modelElement" upperBound="-1"
+        eType="#//WebElement" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="WebElement" abstract="true" eSuperTypes="#//NamedElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Page" eSuperTypes="#//WebElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="content" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="composedOf" eType="#//Form"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Entity" eSuperTypes="#//WebElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="shownBy" eType="#//Form"
+        eOpposite="#//Form/data"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Form">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//FormType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="data" eType="#//Entity"
+        eOpposite="#//Entity/shownBy"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="FormType">
+    <eLiterals name="Multiple"/>
+    <eLiterals name="Single" value="1"/>
+  </eClassifiers>
+</ecore:EPackage>
